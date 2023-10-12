@@ -13,6 +13,13 @@ class Shape:
         self.x += delta_x
         self.y += delta_y
 
+    def __str__(self):
+        """Return string with class name and all fields.
+        Convert class name from format <class '__main__.class_name'> to format class_name.
+        """
+
+        return f"""{str(self.__class__).split('.')[-1].rstrip("'>")} {self.__dict__}"""
+
 
 class Circle(Shape):
     """Class Circle"""
